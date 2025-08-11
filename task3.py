@@ -22,7 +22,7 @@ fig = px.line(
 )
 
 app.layout = html.Div(children=[
-    html.H1("Daily Pink Morsels Sales"),
+    html.H1("Daily Pink Morsels Sales", id='header'),
 
     dcc.Graph(
         id='my-output',
