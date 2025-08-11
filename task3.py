@@ -32,15 +32,18 @@ app.layout = html.Div(children=[
     dcc.RadioItems(
         ['all', 'north', 'south', 'east', 'west'], 
         'all',
-        id='my-input'
+        id='my-input',
+        inline=True
     )
-])
+], style={
+    'textAlign': 'center'
+})
 
 @callback(
     Output(component_id='my-output', component_property='figure'),
     Input(component_id='my-input', component_property='value')
 )
-def update_output_div(input_value):
+def update_output(input_value):
     if input_value == 'all':
         filtered_df = df
     else:
